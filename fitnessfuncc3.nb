@@ -1,0 +1,994 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     41936,        986]
+NotebookOptionsPosition[     39222,        928]
+NotebookOutlinePosition[     39621,        944]
+CellTagsIndexPosition[     39578,        941]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Nicholson and Bailey", "Subsubsection",
+ CellChangeTimes->{{3.807816786626308*^9, 3.807816814710353*^9}, {
+  3.8078189177459726`*^9, 3.807819095434765*^9}, {3.807819143799877*^9, 
+  3.8078191544553766`*^9}, {3.8078192664796085`*^9, 3.807819374921736*^9}, {
+  3.8078194063377132`*^9, 3.8078194099580336`*^9}, {3.807820920151373*^9, 
+  3.8078209284431973`*^9}, {3.807821418179994*^9, 3.8078214620247717`*^9}, {
+  3.8078215926773205`*^9, 3.8078215965080748`*^9}, {3.8078217987382317`*^9, 
+  3.807821821368716*^9}},ExpressionUUID->"473daf31-1360-4c06-a9f5-\
+782add01112e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"E", "^", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "a"}], "*", "P"}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"P", ",", "0", ",", "10"}], "}"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", " ", "Full"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", " ", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<No. of Parasites\>\"", ",", 
+        "\"\<Prob. of Host escaping parasite (host survival)\>\""}], 
+       "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "1", ",", "\"\<Search parameter\>\""}], "}"}], ",", 
+     "0", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.807822886860531*^9, 
+  3.8078229370193768`*^9}},ExpressionUUID->"9344d50b-2db6-434c-b5dd-\
+bcfe078a214e"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 1, "Search parameter"}, 0, 10, 1}}, 
+    Typeset`size$$ = {360., {67., 71.03227828743465}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$41833$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`a$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$41833$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[E^((-$CellContext`a$$) $CellContext`P), {$CellContext`P, 0, 10}, 
+        PlotRange -> Full, 
+        AxesLabel -> {
+         "No. of Parasites", 
+          "Prob. of Host escaping parasite (host survival)"}], 
+      "Specifications" :> {{{$CellContext`a$$, 1, "Search parameter"}, 0, 10, 
+         1, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{826., {96.63403328722343, 102.36596671277657`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.807819006930457*^9, 3.8078190563313704`*^9, 3.8078190981644616`*^9, 
+   3.8078191588336277`*^9, 3.807819328754936*^9, {3.8078193699909673`*^9, 
+   3.80781937679076*^9}, 3.807819413980303*^9, {3.807820922321568*^9, 
+   3.807820933015966*^9}, 3.8078214207710943`*^9, {3.8078214550175004`*^9, 
+   3.807821464600871*^9}, 3.8078215994980755`*^9, 3.80782182850562*^9, 
+   3.8078229778192887`*^9, 
+   3.8161363085208287`*^9},ExpressionUUID->"068ef31f-5ac2-48aa-b79f-\
+47044d37d233"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Model of Rogers (1972)", "Subsubsection",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{{3.807819978096365*^9, 3.807820040636073*^9}, {
+  3.807820092366725*^9, 3.8078201175912647`*^9}, {3.807820329799738*^9, 
+  3.8078203313246584`*^9}, {3.8078208755087647`*^9, 3.8078208759824963`*^9}, {
+  3.807821283000515*^9, 3.8078212841344814`*^9}, {3.8078213620740404`*^9, 
+  3.8078213873714237`*^9}, {3.8078214805821323`*^9, 3.807821585597253*^9}, {
+  3.807821620268529*^9, 3.8078216224516916`*^9}, {3.807821669529811*^9, 
+  3.807821726105478*^9}, {3.8078217562817764`*^9, 
+  3.8078217761287374`*^9}},ExpressionUUID->"b1332e3d-e070-44d7-be0c-\
+bc3ca7264f8c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"E", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"a", "*", "P", "*", "Fmax"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{"Fmax", "+", " ", 
+            RowBox[{"(", 
+             RowBox[{"a", "*", "H"}], ")"}]}], ")"}]}], ")"}]}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"P", ",", "0", ",", "100"}], "}"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", " ", "Full"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", " ", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<No. of Parasites\>\"", ",", 
+        "\"\<Prob. of Host escaping parasite (host survival)\>\""}], 
+       "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "0.2", ",", "\"\<Search parameter\>\""}], "}"}], ",", 
+     "0", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Fmax", ",", "2", ",", "\"\<Max Fecundity of parasites\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"H", ",", "50", ",", "\"\<No. of hosts\>\""}], "}"}], ",", "0", 
+     ",", "100", ",", "5", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{3.8161300009771214`*^9, 
+  3.8161300758568745`*^9},ExpressionUUID->"dbc29a16-4084-45c5-a035-\
+5f1a927db4a2"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 0.2, $CellContext`Fmax$$ = 
+    2, $CellContext`H$$ = 50, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 0.2, "Search parameter"}, 0, 10, 1}, {{
+       Hold[$CellContext`Fmax$$], 2, "Max Fecundity of parasites"}, 1, 10, 
+      1}, {{
+       Hold[$CellContext`H$$], 50, "No. of hosts"}, 0, 100, 5}}, 
+    Typeset`size$$ = {360., {67., 71.02768955194264}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$41945$$ = 0, $CellContext`Fmax$41946$$ = 
+    0, $CellContext`H$41947$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.2, $CellContext`Fmax$$ = 
+        2, $CellContext`H$$ = 50}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$41945$$, 0], 
+        Hold[$CellContext`Fmax$$, $CellContext`Fmax$41946$$, 0], 
+        Hold[$CellContext`H$$, $CellContext`H$41947$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[E^(-((($CellContext`a$$ $CellContext`P) \
+$CellContext`Fmax$$)/($CellContext`Fmax$$ + $CellContext`a$$ \
+$CellContext`H$$))), {$CellContext`P, 0, 100}, PlotRange -> Full, 
+        AxesLabel -> {
+         "No. of Parasites", 
+          "Prob. of Host escaping parasite (host survival)"}], 
+      "Specifications" :> {{{$CellContext`a$$, 0.2, "Search parameter"}, 0, 
+         10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Fmax$$, 2, "Max Fecundity of parasites"}, 
+         1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`H$$, 50, "No. of hosts"}, 0, 100, 5, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{826., {96.63403328722343, 102.36596671277657`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.8078215265222425`*^9, 3.8078215560762043`*^9}, 
+   3.8078215885772824`*^9, 3.807821624579028*^9, 3.8078218597311115`*^9, 
+   3.8161363111999836`*^9},ExpressionUUID->"1b198904-0cb7-49b4-8263-\
+0076b2d5eb14"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+New model - My modification - Based Rogers, Lehmann and Harlan 2019 \
+\>", "Subsubsection",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{{3.8161289614103985`*^9, 3.816128968283389*^9}, {
+   3.8161290373451138`*^9, 3.8161290512699785`*^9}, {3.8161291391821127`*^9, 
+   3.81612919192439*^9}, {3.8161292722607775`*^9, 3.816129302628748*^9}, {
+   3.816129384429785*^9, 3.816129433191902*^9}, {3.8161296896896706`*^9, 
+   3.816129713239121*^9}, 3.8161299003645835`*^9, {3.8161299337435155`*^9, 
+   3.816129950963709*^9}, {3.8161313368452244`*^9, 3.816131348235132*^9}, 
+   3.816131485493926*^9, {3.81613154304358*^9, 3.8161315707103558`*^9}, {
+   3.816131754857689*^9, 3.8161317552208467`*^9}, {3.8161318676247735`*^9, 
+   3.816131872915831*^9}, 3.8161319088876486`*^9, {3.816131952362995*^9, 
+   3.8161319812597513`*^9}, {3.8161320173881235`*^9, 3.816132017726326*^9}, {
+   3.8161320484384966`*^9, 3.816132096865312*^9}, {3.816132162812666*^9, 
+   3.8161321643900633`*^9}, {3.8161322206188107`*^9, 
+   3.8161322211451406`*^9}, {3.8161323324969416`*^9, 3.816132388542534*^9}, {
+   3.8161324290408716`*^9, 3.8161324544552374`*^9}, 3.8161338985666723`*^9, {
+   3.816136347234623*^9, 3.8161363504451733`*^9}, {3.8247729509808917`*^9, 
+   3.8247729553742094`*^9}, {3.8247729913568*^9, 
+   3.8247730101623306`*^9}},ExpressionUUID->"e285402a-e6b0-4874-970c-\
+51cfa084f0b1"],
+
+Cell[CellGroupData[{
+
+Cell["Search efficiency ", "Subsubsection",
+ CellChangeTimes->{{3.8247729609105883`*^9, 
+  3.8247729946319375`*^9}},ExpressionUUID->"4795de91-6573-482a-a652-\
+01e4852cf7ee"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"z", "/", 
+      RowBox[{"(", 
+       RowBox[{"a", "+", "z"}], ")"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", " ", "0", ",", " ", "100"}], "}"}], ",", " ", 
+     RowBox[{"PlotRange", " ", "->", " ", "Full"}], ",", " ", 
+     RowBox[{"AxesLabel", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<syllable rate\>\"", ",", " ", "\"\<search efficiency\>\""}], 
+       "}"}]}]}], "]"}], ",", "\n", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", " ", "1", ",", " ", "\"\<No. of Hosts\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "100", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "->", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.816132459660283*^9, 3.816132478995598*^9}, {
+  3.8161327615868893`*^9, 3.8161327664729233`*^9}, {3.824772974783017*^9, 
+  3.82477297819217*^9}, {3.8376373107780137`*^9, 3.8376373361156487`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"85ecf58a-7fe6-48d3-b675-778752079be6"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 11, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 1, "No. of Hosts"}, 0, 100, 1}}, 
+    Typeset`size$$ = {360., {92., 95.95344571857254}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`a$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[$CellContext`z/($CellContext`a$$ + $CellContext`z), \
+{$CellContext`z, 0, 100}, PlotRange -> Full, 
+        AxesLabel -> {"syllable rate", "search efficiency"}], 
+      "Specifications" :> {{{$CellContext`a$$, 1, "No. of Hosts"}, 0, 100, 1, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{826., {121.13403328722343`, 126.86596671277657`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.816132462314185*^9, 3.816132481361268*^9}, 
+   3.8161327694429803`*^9, {3.837637319899146*^9, 3.8376373383628407`*^9}},
+ CellLabel->"Out[2]=",ExpressionUUID->"b1cb158d-98c5-41ad-8b7b-1419a394df3c"]
+}, Open  ]],
+
+Cell["\<\
+Substituting modification in Rogers model
+\
+\>", "Text",
+ CellFrame->{{0, 0}, {0.5, 0}},
+ CellChangeTimes->{{3.816132926186034*^9, 
+  3.816132944784299*^9}},ExpressionUUID->"629df9cf-12b1-484f-b67c-\
+8d6e363d4209"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Reproductive component of fitness", "Subsubsection",
+ CellChangeTimes->{{3.82477291332891*^9, 
+  3.8247729443239913`*^9}},ExpressionUUID->"00cb79ca-9333-448a-9576-\
+b092945bd4e0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"rmin", " ", "+", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"rmax", "-", "rmin"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{"1", "+", 
+            RowBox[{"E", "^", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "b"}], "*", 
+               RowBox[{"(", 
+                RowBox[{"z", "-", "zbar"}], ")"}]}], ")"}]}]}], ")"}]}], 
+         ")"}]}], ")"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "0", ",", "100"}], "}"}], ",", " ", 
+      RowBox[{"PlotRange", "\[Rule]", " ", "Full"}], ",", 
+      RowBox[{"AxesLabel", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Syllable rate\>\"", ",", "\"\<repro comp of fitness\>\""}], 
+        "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"rmin", ",", "1", ",", "\"\<min repro\>\""}], "}"}], ",", "0", 
+      ",", "50", ",", "1", ",", 
+      RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",",
+     "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"rmax", ",", "2", ",", "\"\<max repro\>\""}], "}"}], ",", "0", 
+      ",", "50", ",", "1", ",", 
+      RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",",
+     "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"zbar", ",", "50", ",", "\"\<chorus mean\>\""}], "}"}], ",", 
+      "0", ",", "100", ",", "1", ",", 
+      RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",",
+     "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"b", ",", "0.5", ",", "\"\<slope\>\""}], "}"}], ",", "0", ",", 
+      "1", ",", "0.1", ",", 
+      RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+   "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.8247728942606735`*^9, 
+  3.82477290681382*^9}},ExpressionUUID->"d1d0355e-9ba9-4204-8fd4-\
+d45c7eac5524"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`b$$ = 0.5, $CellContext`rmax$$ = 
+    2, $CellContext`rmin$$ = 1, $CellContext`zbar$$ = 50, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`rmin$$], 1, "min repro"}, 0, 50, 1}, {{
+       Hold[$CellContext`rmax$$], 2, "max repro"}, 0, 50, 1}, {{
+       Hold[$CellContext`zbar$$], 50, "chorus mean"}, 0, 100, 1}, {{
+       Hold[$CellContext`b$$], 0.5, "slope"}, 0, 1, 0.1}}, Typeset`size$$ = {
+    360., {88., 93.18851079150491}}, Typeset`update$$ = 0, Typeset`initDone$$,
+     Typeset`skipInitDone$$ = True, $CellContext`rmin$3467$$ = 
+    0, $CellContext`rmax$3468$$ = 0, $CellContext`zbar$3469$$ = 
+    0, $CellContext`b$3470$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 0.5, $CellContext`rmax$$ = 
+        2, $CellContext`rmin$$ = 1, $CellContext`zbar$$ = 50}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`rmin$$, $CellContext`rmin$3467$$, 0], 
+        Hold[$CellContext`rmax$$, $CellContext`rmax$3468$$, 0], 
+        Hold[$CellContext`zbar$$, $CellContext`zbar$3469$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$3470$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[$CellContext`rmin$$ + ($CellContext`rmax$$ - $CellContext`rmin$$)/(
+         1 + E^((-$CellContext`b$$) ($CellContext`z - $CellContext`zbar$$))), \
+{$CellContext`z, 0, 100}, PlotRange -> Full, 
+        AxesLabel -> {"Syllable rate", "repro comp of fitness"}], 
+      "Specifications" :> {{{$CellContext`rmin$$, 1, "min repro"}, 0, 50, 1, 
+         Appearance -> "Labeled"}, {{$CellContext`rmax$$, 2, "max repro"}, 0, 
+         50, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`zbar$$, 50, "chorus mean"}, 0, 100, 1, 
+         Appearance -> "Labeled"}, {{$CellContext`b$$, 0.5, "slope"}, 0, 1, 
+         0.1, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{826., {118.13403328722343`, 123.86596671277657`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.8247729084149294`*^9},ExpressionUUID->"16ccb5f8-b9b9-4037-8976-\
+4a817b926bda"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Fitness curves for Host and parasite ", "Subsubsection",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.8247623626415043`*^9, 
+  3.82476239525004*^9}},ExpressionUUID->"b5f00337-7dfe-4d2f-a452-\
+6859a398e008"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"E", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"E", "^", 
+              RowBox[{"-", 
+               RowBox[{"(", 
+                RowBox[{"z", "/", "H"}], ")"}]}]}], ")"}], "*", "P", "*", 
+            "Fmax"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{"Fmax", "+", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"E", "^", 
+                RowBox[{"-", 
+                 RowBox[{"(", 
+                  RowBox[{"z", "/", "H"}], ")"}]}]}], ")"}], "*", "H"}], 
+             ")"}]}], ")"}]}], ")"}]}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"P", ",", "0", ",", "100"}], "}"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", " ", "Full"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", " ", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<No. of Parasites\>\"", ",", 
+        "\"\<Prob. of Host escaping parasite (host survival)\>\""}], 
+       "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", "50", ",", "\"\<syllable rate\>\""}], "}"}], ",", "0",
+      ",", "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Fmax", ",", "2", ",", "\"\<Max Fecundity of parasites\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"H", ",", "50", ",", "\"\<No. of hosts\>\""}], "}"}], ",", "0", 
+     ",", "100", ",", "5", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.8161327179190855`*^9, 3.8161327580362616`*^9}, {
+  3.816132793901087*^9, 
+  3.81613281429716*^9}},ExpressionUUID->"4ee2474f-91d5-45f4-8e76-\
+c31c3cfe6e3c"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`Fmax$$ = 2, $CellContext`H$$ = 
+    15, $CellContext`z$$ = 50, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`z$$], 50, "syllable rate"}, 0, 100, 1}, {{
+       Hold[$CellContext`Fmax$$], 2, "Max Fecundity of parasites"}, 1, 10, 
+      1}, {{
+       Hold[$CellContext`H$$], 50, "No. of hosts"}, 0, 100, 5}}, 
+    Typeset`size$$ = {360., {67., 71.0276895519427}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`z$38321$$ = 0, $CellContext`Fmax$38322$$ = 
+    0, $CellContext`H$38323$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`Fmax$$ = 2, $CellContext`H$$ = 
+        50, $CellContext`z$$ = 50}, "ControllerVariables" :> {
+        Hold[$CellContext`z$$, $CellContext`z$38321$$, 0], 
+        Hold[$CellContext`Fmax$$, $CellContext`Fmax$38322$$, 0], 
+        Hold[$CellContext`H$$, $CellContext`H$38323$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[E^(-(((
+            E^(-($CellContext`z$$/$CellContext`H$$)) $CellContext`P) \
+$CellContext`Fmax$$)/($CellContext`Fmax$$ + 
+          E^(-($CellContext`z$$/$CellContext`H$$)) $CellContext`H$$))), \
+{$CellContext`P, 0, 100}, PlotRange -> Full, 
+        AxesLabel -> {
+         "No. of Parasites", 
+          "Prob. of Host escaping parasite (host survival)"}], 
+      "Specifications" :> {{{$CellContext`z$$, 50, "syllable rate"}, 0, 100, 
+         1, Appearance -> 
+         "Labeled"}, {{$CellContext`Fmax$$, 2, "Max Fecundity of parasites"}, 
+         1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`H$$, 50, "No. of hosts"}, 0, 100, 5, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{826., {96.63403328722343, 102.36596671277657`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8161328165570354`*^9, 
+  3.8195425072705507`*^9},ExpressionUUID->"958fd51f-8843-4292-9194-\
+1503fe0fa861"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"H", "*", 
+      RowBox[{"(", 
+       RowBox[{"E", "^", 
+        RowBox[{"(", 
+         RowBox[{"-", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"E", "^", 
+                RowBox[{"-", 
+                 RowBox[{"(", 
+                  RowBox[{"z", "/", "H"}], ")"}]}]}], ")"}], "*", "P", "*", 
+              "Fmax"}], ")"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"Fmax", "+", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"E", "^", 
+                  RowBox[{"-", 
+                   RowBox[{"(", 
+                    RowBox[{"z", "/", "H"}], ")"}]}]}], ")"}], "*", "H"}], 
+               ")"}]}], ")"}]}], ")"}]}], ")"}]}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{"rmin", " ", "+", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"rmax", "-", "rmin"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{"1", "+", 
+            RowBox[{"E", "^", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "a"}], "*", 
+               RowBox[{"(", 
+                RowBox[{"z", "-", "zbar"}], ")"}]}], ")"}]}]}], ")"}]}], 
+         ")"}]}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"P", ",", "0", ",", "100"}], "}"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", " ", "Full"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<No. of Parasites\>\"", ",", "\"\<fitness of host\>\""}], 
+       "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", "25", ",", "\"\<syllable rate\>\""}], "}"}], ",", "0",
+      ",", "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Fmax", ",", "2", ",", "\"\<Max Fecundity of parasites\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"H", ",", "50", ",", "\"\<No. of hosts\>\""}], "}"}], ",", "0", 
+     ",", "100", ",", "5", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"rmin", ",", "1", ",", "\"\<min repro\>\""}], "}"}], ",", "0", 
+     ",", "50", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"rmax", ",", "2", ",", "\"\<max repro\>\""}], "}"}], ",", "0", 
+     ",", "50", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"zbar", ",", "50", ",", "\"\<chorus mean\>\""}], "}"}], ",", 
+     "0", ",", "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "0.5", ",", "\"\<slope\>\""}], "}"}], ",", "0", ",", 
+     "1", ",", "0.1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.8247607277676907`*^9, 
+  3.8247610904227853`*^9}},ExpressionUUID->"a969eb41-92a8-49b0-9479-\
+c35a19525eca"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1., $CellContext`Fmax$$ = 
+    9, $CellContext`H$$ = 50, $CellContext`rmax$$ = 2, $CellContext`rmin$$ = 
+    1, $CellContext`z$$ = 93, $CellContext`zbar$$ = 50, Typeset`show$$ = True,
+     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`z$$], 25, "syllable rate"}, 0, 100, 1}, {{
+       Hold[$CellContext`Fmax$$], 2, "Max Fecundity of parasites"}, 1, 10, 
+      1}, {{
+       Hold[$CellContext`H$$], 50, "No. of hosts"}, 0, 100, 5}, {{
+       Hold[$CellContext`rmin$$], 1, "min repro"}, 0, 50, 1}, {{
+       Hold[$CellContext`rmax$$], 2, "max repro"}, 0, 50, 1}, {{
+       Hold[$CellContext`zbar$$], 50, "chorus mean"}, 0, 100, 1}, {{
+       Hold[$CellContext`a$$], 0.5, "slope"}, 0, 1, 0.1}}, Typeset`size$$ = {
+    360., {88., 92.84908551720227}}, Typeset`update$$ = 0, Typeset`initDone$$,
+     Typeset`skipInitDone$$ = True, $CellContext`z$7562$$ = 
+    0, $CellContext`Fmax$7563$$ = 0, $CellContext`H$7564$$ = 
+    0, $CellContext`rmin$7565$$ = 0, $CellContext`rmax$7566$$ = 
+    0, $CellContext`zbar$7567$$ = 0, $CellContext`a$7568$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.5, $CellContext`Fmax$$ = 
+        2, $CellContext`H$$ = 50, $CellContext`rmax$$ = 
+        2, $CellContext`rmin$$ = 1, $CellContext`z$$ = 
+        25, $CellContext`zbar$$ = 50}, "ControllerVariables" :> {
+        Hold[$CellContext`z$$, $CellContext`z$7562$$, 0], 
+        Hold[$CellContext`Fmax$$, $CellContext`Fmax$7563$$, 0], 
+        Hold[$CellContext`H$$, $CellContext`H$7564$$, 0], 
+        Hold[$CellContext`rmin$$, $CellContext`rmin$7565$$, 0], 
+        Hold[$CellContext`rmax$$, $CellContext`rmax$7566$$, 0], 
+        Hold[$CellContext`zbar$$, $CellContext`zbar$7567$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$7568$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[($CellContext`H$$ 
+         E^(-(((E^(-($CellContext`z$$/$CellContext`H$$)) $CellContext`P) \
+$CellContext`Fmax$$)/($CellContext`Fmax$$ + 
+            E^(-($CellContext`z$$/$CellContext`H$$)) $CellContext`H$$)))) \
+($CellContext`rmin$$ + ($CellContext`rmax$$ - $CellContext`rmin$$)/(1 + 
+          E^((-$CellContext`a$$) ($CellContext`z$$ - $CellContext`zbar$$)))), \
+{$CellContext`P, 0, 100}, PlotRange -> Full, 
+        AxesLabel -> {"No. of Parasites", "fitness of host"}], 
+      "Specifications" :> {{{$CellContext`z$$, 25, "syllable rate"}, 0, 100, 
+         1, Appearance -> 
+         "Labeled"}, {{$CellContext`Fmax$$, 2, "Max Fecundity of parasites"}, 
+         1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`H$$, 50, "No. of hosts"}, 0, 100, 5, 
+         Appearance -> "Labeled"}, {{$CellContext`rmin$$, 1, "min repro"}, 0, 
+         50, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`rmax$$, 2, "max repro"}, 0, 50, 1, 
+         Appearance -> "Labeled"}, {{$CellContext`zbar$$, 50, "chorus mean"}, 
+         0, 100, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`a$$, 0.5, "slope"}, 0, 1, 0.1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{826., {117.63403328722343`, 123.36596671277657`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.82476106205739*^9, 3.8247610939364605`*^9, 
+  3.8247611475687404`*^9},ExpressionUUID->"bb3dd439-99d2-4115-8038-\
+94c4c86b0462"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"H", "*", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{"(", 
+         RowBox[{"E", "^", 
+          RowBox[{"(", 
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"E", "^", 
+                  RowBox[{"-", 
+                   RowBox[{"(", 
+                    RowBox[{"z", "/", "H"}], ")"}]}]}], ")"}], "*", "P", "*", 
+                "Fmax"}], ")"}], "/", 
+              RowBox[{"(", 
+               RowBox[{"Fmax", "+", " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{"E", "^", 
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{"z", "/", "H"}], ")"}]}]}], ")"}], "*", "H"}], 
+                 ")"}]}], ")"}]}], ")"}]}], ")"}]}], ")"}]}], ")"}], "*", 
+      "q"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"P", ",", "0", ",", "100"}], "}"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", " ", "Full"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", " ", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<No. of Parasites\>\"", ",", "\"\<fitness of parasite\>\""}], 
+       "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", "25", ",", "\"\<syllable rate\>\""}], "}"}], ",", "0",
+      ",", "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Fmax", ",", "2", ",", "\"\<Max Fecundity of parasites\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"H", ",", "50", ",", "\"\<No. of hosts\>\""}], "}"}], ",", "0", 
+     ",", "100", ",", "5", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"q", ",", "0.5", ",", "\"\<proportion of females\>\""}], "}"}], 
+     ",", "0", ",", "1", ",", "0.1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.8247612259532776`*^9, 3.8247612553907585`*^9}, {
+  3.8247612936384544`*^9, 
+  3.824761332383321*^9}},ExpressionUUID->"a117b1ed-2de6-4907-a7d7-\
+b95adbc438be"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`Fmax$$ = 2, $CellContext`H$$ = 
+    50, $CellContext`q$$ = 0.5, $CellContext`z$$ = 25, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`z$$], 25, "syllable rate"}, 0, 100, 1}, {{
+       Hold[$CellContext`Fmax$$], 2, "Max Fecundity of parasites"}, 1, 10, 
+      1}, {{
+       Hold[$CellContext`H$$], 50, "No. of hosts"}, 0, 100, 5}, {{
+       Hold[$CellContext`q$$], 0.5, "proportion of females"}, 0, 1, 0.1}}, 
+    Typeset`size$$ = {360., {86., 89.82047848785342}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, $CellContext`z$7181$$ =
+     0, $CellContext`Fmax$7182$$ = 0, $CellContext`H$7183$$ = 
+    0, $CellContext`q$7184$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`Fmax$$ = 2, $CellContext`H$$ = 
+        50, $CellContext`q$$ = 0.5, $CellContext`z$$ = 25}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`z$$, $CellContext`z$7181$$, 0], 
+        Hold[$CellContext`Fmax$$, $CellContext`Fmax$7182$$, 0], 
+        Hold[$CellContext`H$$, $CellContext`H$7183$$, 0], 
+        Hold[$CellContext`q$$, $CellContext`q$7184$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[($CellContext`H$$ (1 - 
+          E^(-(((E^(-($CellContext`z$$/$CellContext`H$$)) $CellContext`P) \
+$CellContext`Fmax$$)/($CellContext`Fmax$$ + 
+            E^(-($CellContext`z$$/$CellContext`H$$)) $CellContext`H$$))))) \
+$CellContext`q$$, {$CellContext`P, 0, 100}, PlotRange -> Full, 
+        AxesLabel -> {"No. of Parasites", "fitness of parasite"}], 
+      "Specifications" :> {{{$CellContext`z$$, 25, "syllable rate"}, 0, 100, 
+         1, Appearance -> 
+         "Labeled"}, {{$CellContext`Fmax$$, 2, "Max Fecundity of parasites"}, 
+         1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`H$$, 50, "No. of hosts"}, 0, 100, 5, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`q$$, 0.5, "proportion of females"}, 0, 1, 
+         0.1, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{826., {115.13403328722343`, 120.86596671277657`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8247613373476515`*^9, 
+  3.8247731512694445`*^9},ExpressionUUID->"60627519-5156-41b7-834d-\
+49ce38df8f9e"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{950.4, 498.9},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"39302253-700d-4269-97c1-9057ea73f256"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 574, 8, 45, "Subsubsection",ExpressionUUID->"473daf31-1360-4c06-a9f5-782add01112e"],
+Cell[CellGroupData[{
+Cell[1179, 34, 996, 27, 86, "Input",ExpressionUUID->"9344d50b-2db6-434c-b5dd-bcfe078a214e"],
+Cell[2178, 63, 2344, 47, 218, "Output",ExpressionUUID->"068ef31f-5ac2-48aa-b79f-47044d37d233"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4571, 116, 657, 10, 56, "Subsubsection",ExpressionUUID->"b1332e3d-e070-44d7-be0c-bc3ca7264f8c"],
+Cell[CellGroupData[{
+Cell[5253, 130, 1793, 48, 124, "Input",ExpressionUUID->"dbc29a16-4084-45c5-a035-5f1a927db4a2"],
+Cell[7049, 180, 2819, 54, 218, "Output",ExpressionUUID->"1b198904-0cb7-49b4-8263-0076b2d5eb14"]
+}, Open  ]]
+}, Open  ]],
+Cell[9895, 238, 1376, 21, 56, "Subsubsection",ExpressionUUID->"e285402a-e6b0-4874-970c-51cfa084f0b1"],
+Cell[CellGroupData[{
+Cell[11296, 263, 173, 3, 37, "Subsubsection",ExpressionUUID->"4795de91-6573-482a-a652-01e4852cf7ee"],
+Cell[CellGroupData[{
+Cell[11494, 270, 1115, 26, 48, "Input",ExpressionUUID->"85ecf58a-7fe6-48d3-b675-778752079be6"],
+Cell[12612, 298, 1915, 36, 267, "Output",ExpressionUUID->"b1cb158d-98c5-41ad-8b7b-1419a394df3c"]
+}, Open  ]],
+Cell[14542, 337, 224, 7, 66, "Text",ExpressionUUID->"629df9cf-12b1-484f-b67c-8d6e363d4209"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14803, 349, 185, 3, 45, "Subsubsection",ExpressionUUID->"00cb79ca-9333-448a-9576-b092945bd4e0"],
+Cell[CellGroupData[{
+Cell[15013, 356, 2197, 59, 162, "Input",ExpressionUUID->"d1d0355e-9ba9-4204-8fd4-d45c7eac5524"],
+Cell[17213, 417, 2920, 54, 261, "Output",ExpressionUUID->"16ccb5f8-b9b9-4037-8976-4a817b926bda"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20182, 477, 221, 4, 53, "Subsubsection",ExpressionUUID->"b5f00337-7dfe-4d2f-a452-6859a398e008"],
+Cell[CellGroupData[{
+Cell[20428, 485, 2217, 61, 124, "Input",ExpressionUUID->"4ee2474f-91d5-45f4-8e76-c31c3cfe6e3c"],
+Cell[22648, 548, 2781, 55, 218, "Output",ExpressionUUID->"958fd51f-8843-4292-9194-1503fe0fa861"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25466, 608, 3767, 103, 238, "Input",ExpressionUUID->"a969eb41-92a8-49b0-9479-c35a19525eca"],
+Cell[29236, 713, 4138, 73, 260, "Output",ExpressionUUID->"bb3dd439-99d2-4115-8038-94c4c86b0462"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33411, 791, 2676, 72, 143, "Input",ExpressionUUID->"a117b1ed-2de6-4907-a7d7-b95adbc438be"],
+Cell[36090, 865, 3104, 59, 255, "Output",ExpressionUUID->"60627519-5156-41b7-834d-49ce38df8f9e"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
