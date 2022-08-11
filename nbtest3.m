@@ -88,16 +88,16 @@ if sum(nz) > 0.00000001  % run simulation if total pop size is greater than 0
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% nzmut = zeros(1,zsize); % 
-%     for i = 1:zsize % for iteration from 1 to 100 of syllable rate
-%        indz = nz(i); % picking number of individuals at each trait
-%        mutdist = pdf(makedist('Normal', i, sigmag),x); %creating normal pdf at each trait
-%        nzmut = nzmut + (indz * mutdist);  % making a new mutation population       
-%     end
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     nz = nzmut; %replacing new population with individuals who have variation 
-%     nzt(:,t)=nz; % storing new population vector as dataframe at every time step
+nzmut = zeros(1,zsize); % 
+    for i = 1:zsize % for iteration from 1 to 100 of syllable rate
+       indz = nz(i); % picking number of individuals at each trait
+       mutdist = pdf(makedist('Normal', i, sigmag),x); %creating normal pdf at each trait
+       nzmut = nzmut + (indz * mutdist);  % making a new mutation population       
+    end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    nz = nzmut; %replacing new population with individuals who have variation 
+    nzt(:,t)=nz; % storing new population vector as dataframe at every time step
 
 
 
@@ -133,6 +133,7 @@ scatter(qi,qioutzbar,sz,c,'filled','MarkerEdgeColor','black')
 colormap(flipud(gray))
 xlabel('Proportion of parasitoid females')
 ylabel('Chorus mean of the population')
+box on
 
 figure(3)
 d = qi;
@@ -141,3 +142,4 @@ scatter(qi,qioutN,sz,d,'d','filled','MarkerEdgeColor','black')
 colormap(flipud(gray))
 xlabel('Proportion of parasitoid females')
 ylabel('Population size of the host')
+box on

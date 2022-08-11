@@ -158,16 +158,13 @@ ylabel('Zbar')
 
 figure(7)
 subplot(1,3,1)
-plot1 = plot(x,nzt(:,1),'black')
-plot1(1).LineWidth = 2;
+area(nzt(:,1),'FaceColor',[0.7 0.7 0.7])
 
 subplot(1,3,2)
-plot1 = plot(x,nzt(:,10),'black')
-plot1(1).LineWidth = 2;
+area(nzt(:,10),'FaceColor',[0.7 0.7 0.7])
 
 subplot(1,3,3)
-plot1 = plot(x,nzt(:,36),'black')
-plot1(1).LineWidth = 2;
+area(nzt(:,36),'FaceColor',[0.7 0.7 0.7])
 
 
 

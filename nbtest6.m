@@ -91,16 +91,16 @@ if sum(nz) > 0.00000001  % run simulation if total pop size is greater than 0
     
    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    
-%    nzmut = zeros(1,zsize); % 
-%     for i = 1:zsize % for iteration from 1 to 100 of syllable rate
-%        indz = nz(i); % picking number of individuals at each trait
-%        mutdist = pdf(makedist('Normal', i, sigmag),x); %creating normal pdf at each trait
-%        nzmut = nzmut + (indz * mutdist);  % making a new mutation population       
-%     end
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     nz = nzmut; %replacing new population with individuals who have variation 
-%     nzt(:,t)=nz; % storing new population vector as dataframe at every time step
+   nzmut = zeros(1,zsize); % 
+    for i = 1:zsize % for iteration from 1 to 100 of syllable rate
+       indz = nz(i); % picking number of individuals at each trait
+       mutdist = pdf(makedist('Normal', i, sigmag),x); %creating normal pdf at each trait
+       nzmut = nzmut + (indz * mutdist);  % making a new mutation population       
+    end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    nz = nzmut; %replacing new population with individuals who have variation 
+    nzt(:,t)=nz; % storing new population vector as dataframe at every time step
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %calculating zbar
@@ -132,17 +132,14 @@ end
 
 figure(6)
 contourf(qi, fmaxi, rminoutzbarmean,'EdgeColor','none')
-mymap1 = [1 1 0
-    0.9 0.9 0.1
-    0.8 0.8 0.2
-    0.7 0.7 0.3
-    0.6 0.6 0.4
-    0.5 0.5 0.5
-    0.4 0.4 0.6
-    0.3 0.3 0.7
-    0.2 0.2 0.8
-    0.1 0.1 0.9
-    0 0 1];
+mymap1 = [0.7 0.85 0.925
+%     0.6 0.8 0.910
+    0.5 0.75 0.895
+    0.4 0.7 0.870
+    0.3 0.6 0.850
+    0.2 0.55 0.845
+    0.1 0.5 0.8410
+   0 0.4470 0.7410];
 colormap(mymap1)
 colorbar
 grid off
@@ -153,19 +150,16 @@ grid off
 figure(8)
 contourf(qi,fmaxi, rminoutn,'EdgeColor','none')
 mymap = [0 0 0
-    0 0 1
-    0 0.2 1
-    0 0.3 1
-    0 0.4 1
-    0 0.5 1
-    0 0.6 1
-    0 0.7 1
-    0 0.8 1
+    0.4 0.4 0.4
+    0.5 0.5 0.5
+    0.6 0.6 0.6
+    0.7 0.7 0.7
+    0.8 0.8 0.8
+    0.9 0.9 0.9
     ];
 colormap(mymap)
-% caxis([500 3000])
- colorbar
- grid off
+colorbar
+grid off
 % ylabel({'Number of viable parasitoid offspring'})
 % xlabel('Proportion of parasitoid females')
 % title({'Population size of the host'})
